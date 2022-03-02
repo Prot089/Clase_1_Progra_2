@@ -1,0 +1,4 @@
+﻿  Polimorfismo.cpp
+C:\Users\DSI209\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(67,45): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+C:\Users\DSI209\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(69,48): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+  Polimorfismo.vcxproj -> C:\Users\DSI209\source\repos\Polimorfismo\x64\Debug\Polimorfismo.exe
