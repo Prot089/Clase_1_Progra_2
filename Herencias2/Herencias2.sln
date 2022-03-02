@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Herencias2", "Herencias2\Herencias2.vcxproj", "{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Debug|x64.ActiveCfg = Debug|x64
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Debug|x64.Build.0 = Debug|x64
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Debug|x86.ActiveCfg = Debug|Win32
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Debug|x86.Build.0 = Debug|Win32
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Release|x64.ActiveCfg = Release|x64
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Release|x64.Build.0 = Release|x64
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Release|x86.ActiveCfg = Release|Win32
+		{561BA7A8-DBC1-4F9D-BF55-C4D1915A3D80}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8836A3A6-3239-4F20-B996-DD8039D38256}
+	EndGlobalSection
+EndGlobal
