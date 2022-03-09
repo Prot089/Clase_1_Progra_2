@@ -7,16 +7,16 @@ using namespace std;
 
 int main()
 {
-        int suma = 1;
+        int suma = 1; //Definimos los tipos de dato
         int aux = 0; 
         int a = 0;
         int limite = 0; 
         bool resultado = false; 
 
         cout << "Dentro de la secuencia de Fibonacci, cual numero estas buscando?\n";
-        cin >> limite;
+        cin >> limite; //Definimos cual es el numero que estamos buscando, en cual se va a detener
 
-        while (resultado == false)
+        while (resultado == false) //Ciclo mientras no haya llegado al limite, puede continuar
         {
             cout << suma << endl;
             if (suma >= limite) {
@@ -25,7 +25,7 @@ int main()
                 if (suma == limite) {
                 }
                 else {
-                    cout << "Nel pa, ese no esta dentro de la serie de Fibonacci\n";
+                    cout << "Nel pa, ese no esta dentro de la serie de Fibonacci\n"; // El numero ingresado no se encuentra en la serie de fibonacci
                 }
             }
             a = suma;

@@ -7,16 +7,16 @@ using namespace std;
 
 int main()
 {
-	int var, h;
+	int var, h; //Definimos variables
 	cout << "Ingresa un numero para decirte si es par o impar" << endl;
-	cin >> var;
-	h = var % 2;
+	cin >> var; // Ingresamos la variable
+	h = var % 2; //Dividimos la variable entre 2
 
-	if (h == 0) {
+	if (h == 0) { //Si el resultado de la division es 0, es par
 		cout << "Par";
 	}
-	else {
-		cout << "Impar";
+	else { //Si no, impar
+		cout << "Impar"; 
 	}
 	getch();
 }
