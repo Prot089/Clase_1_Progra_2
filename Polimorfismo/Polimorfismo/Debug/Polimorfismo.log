@@ -1,0 +1,7 @@
+﻿  Polimorfismo.cpp
+C:\Users\angel\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(188,1): error C2186: '+': operando no válido de tipo 'void'
+C:\Users\angel\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(206,16): error C2143: error de sintaxis: falta ';' delante de 'new'
+C:\Users\angel\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(207,16): error C2143: error de sintaxis: falta ';' delante de 'new'
+C:\Users\angel\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(207,41): error C2661: 'Circulo::Circulo': ninguna función sobrecargada acepta 3 argumentos
+C:\Users\angel\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(208,16): error C2143: error de sintaxis: falta ';' delante de 'new'
+C:\Users\angel\source\repos\Polimorfismo\Polimorfismo\Polimorfismo.cpp(208,20): error C2061: error de sintaxis: identificador 'Triangulo'
