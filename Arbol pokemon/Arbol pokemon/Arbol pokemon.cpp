@@ -39,6 +39,22 @@ void insertar(ABB& arbol, int x, char y)
         arbol = crearNodo(x, y);
     }
     else {
+        if (arbol->tipo == 'P') {
+            if (y == 'A') {
+                insertar(arbol->izq, x, y);
+            }
+            if (y == 'F') {
+                insertar(arbol->der, x, y);
+            }
+            if (y == arbol->tipo) {
+                if (x < arbol->fuerza) {
+                    insertar(arbol->izq, x, y);
+                }
+                else {
+                    insertar(arbol->der, x, y);
+                }
+            }
+        }
         if (arbol->tipo == 'F') {
             if (y == 'P') {
                 insertar(arbol->izq, x, y);
@@ -60,22 +76,6 @@ void insertar(ABB& arbol, int x, char y)
                 insertar(arbol->izq, x, y);
             }
             if (y == 'P') {
-                insertar(arbol->der, x, y);
-            }
-            if (y == arbol->tipo) {
-                if (x < arbol->fuerza) {
-                    insertar(arbol->izq, x, y);
-                }
-                else {
-                    insertar(arbol->der, x, y);
-                }
-            }
-        }
-        if (arbol->tipo == 'P') {
-            if (y == 'A') {
-                insertar(arbol->izq, x, y);
-            }
-            if (y == 'F') {
                 insertar(arbol->der, x, y);
             }
             if (y == arbol->tipo) {
