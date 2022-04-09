@@ -1,14 +1,5 @@
 ﻿  Proyecto juego progra 2 parcial 2.cpp
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(95,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1150,3): error C2046: palabra clave case no válida
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1204,3): error C2046: palabra clave case no válida
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1263,3): error C2046: palabra clave case no válida
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1318,3): error C2046: palabra clave case no válida
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1372,3): error C2046: palabra clave case no válida
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1426,3): error C2046: palabra clave case no válida
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(536,9): error C2196: el valor de case '2' ya se ha utilizado
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1486,1): error C2059: error de sintaxis: '}'
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1486,1): error C2143: error de sintaxis: falta ';' delante de '}'
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1488,13): error C2143: error de sintaxis: falta ';' delante de '{'
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1488,13): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
-C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(1600,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(96,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(85,6): warning C4101: 'rival': variable local sin referencia
+C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2\Proyecto juego progra 2 parcial 2.cpp(612,10): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+  Proyecto juego progra 2 parcial 2.vcxproj -> C:\Users\angel\source\repos\Proyecto juego progra 2 parcial 2\Debug\Proyecto juego progra 2 parcial 2.exe
