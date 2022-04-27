@@ -1,0 +1,12 @@
+﻿  Fizz Buzz.cpp
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(122,19): error C3861: 'Burbuja': no se encontró el identificador
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(126,5): error C3861: 'Burbuja': no se encontró el identificador
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(135,12): error C2109: el subíndice requiere una matriz o tipo de puntero
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(139,12): error C2109: el subíndice requiere una matriz o tipo de puntero
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(143,12): error C2109: el subíndice requiere una matriz o tipo de puntero
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(163,27): error C2143: error de sintaxis: falta ';' delante de ')'
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(163,29): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(163,29): error C2143: error de sintaxis: falta ')' delante de '{'
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(164,31): error C2143: error de sintaxis: falta ';' delante de ')'
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(164,33): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\AMK20\source\repos\Fizz Buzz\Fizz Buzz\Fizz Buzz.cpp(164,33): error C2143: error de sintaxis: falta ')' delante de '{'
