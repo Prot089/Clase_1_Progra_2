@@ -5,9 +5,8 @@
 #include <string>
 #include <conio.h>
 #include <stdlib.h>
-
 using namespace std;
-enum enem { aracnia = 1, aracnio=2, aracnie=3, eskeler=4, eskeletor=5, dracula=6, orco=7 };
+enum enem { aracnia = 1, aracnio, aracnie, eskeler, eskeletor, dracula, orco };
 
 struct Nodo {
 	int dato;
@@ -83,14 +82,14 @@ int main()
 	bool salir = false;
 	int opcmov = 0;
 	int rival;
-	int vida = 40;
-	int vidaaracnia = 6;
-	int vidaaracnio = 6;
-	int vidaaracnie = 6;
-	int vidaeskeler = 12;
-	int vidaeskeletor = 12;
-	int vidadracula = 25;
-	int vidaorco = 50;
+	int vida = 25;
+	int vidaaracnia = 5;
+	int vidaaracnio = 5;
+	int vidaaracnie = 5;
+	int vidaeskeler = 6;
+	int vidaeskeletor = 6;
+	int vidadracula = 15;
+	int vidaorco = 20;
 	int num;
 	int opc = 0;
 	srand(time(NULL));
@@ -105,14 +104,14 @@ int main()
 
 	Personajes* vector[8];
 
-	vector[0] = new Enemigo("Aracnia", 3, 6, "Normal");
-	vector[1] = new Enemigo("Aracnio", 3, 6, "Normal");
-	vector[2] = new Enemigo("Aracnie", 3, 6, "Normal");
-	vector[3] = new Enemigo("Eskeler", 4, 12, "Normal");
-	vector[4] = new Enemigo("Eskeletor", 4, 12, "Normal");
-	vector[5] = new Enemigo("Dracula", 6, 25, "Especial");
-	vector[6] = new Enemigo("Orchundus, el orco", 8, 50, "Jefe");
-	vector[7] = new Heroe(name, 40, 4, 3);
+	vector[0] = new Enemigo("Aracnia", 3, 5, "Normal");
+	vector[1] = new Enemigo("Aracnio", 3, 5, "Normal");
+	vector[2] = new Enemigo("Aracnie", 3, 5, "Normal");
+	vector[3] = new Enemigo("Eskeler", 4, 6, "Normal");
+	vector[4] = new Enemigo("Eskeletor", 4, 6, "Normal");
+	vector[5] = new Enemigo("Dracula", 15, 6, "Especial");
+	vector[6] = new Enemigo("Orchundus, el orco", 20, 7, "Jefe");
+	vector[7] = new Heroe(name, 25, 4, 3);
 	vector[0]->mostrar();
 	vector[1]->mostrar();
 	vector[2]->mostrar();
@@ -126,73 +125,1042 @@ int main()
 	cout << "\tToma esta espada y armadura. Ahora este eres tu" << endl;
 	vector[4]->mostrar();
 
-	cout << "Esta es tu bolsa, en ella puedes ingresar codigos de objeto al derrotar bosses." << endl;
+	cout << "Antes de partir, agrega algunos objetos a tu bolsa." << endl;
+	cout << "Pocima de salud - 1\nPocima de fuerza - 2" << endl;
 	menu();
-	
-	cout << "Deberiamos comenzar por matar a las aranas en el bosque maldito, puedes ganar experiencia y aprender a combatir." << endl;
-	while (salir == false, vida >=1) {
 
-	cout << "Vamos a cazarlo!" << endl;
-	cout << "Tu oponente es Aracnia" << endl;
-	vector[0]->mostrar();
-		while (vida >= 1, vidaaracnia >= 1) {
-			cout << "\tPelea!" << endl;
-			cout << "\tElige tu proximo movimiento \n1-Espada\n2-Proteger" << endl;
-			cin >> opcmov;
+	cout << "A donde te gustaria ir en tu proxima aventura?" << endl;
+	cout << "1- Aracnia\t2- Aracnio\t3- Aracnie\t4- Eskeler\t5- Eskeletor\t6-Dracula\t7- Orchundus, el orco."<<endl;
+	cin >> opc;
 
-			switch (opcmov)
-			{
-			case 1:
-				cout << "\tSeleccionaste Espada" << endl;
-				vidaaracnia -= 4;
-				break;
-			case 2:
-				cout << "\tSeleccionaste Proteger" << endl;
-				vida += 2;
-				break;
-			}
-			num = rand() % (2);
-			cout << num << " ";
-			if (num == 0)
-			{
-				cout << "\tEl enemigo ha elegido Mordida" << endl;
-				vida -= 3;
-			}
-			else
-			{
-				cout << "\tEl enemigo ha utilizado Proteger" << endl;
-				vidaaracnia += 2;
-			}
-			cout << "\tTu vida es de " << vida << endl;
-			cout << "\tLa vida de tu enemigo es de " << vidaaracnia << endl;
-		}
-		if (vidaaracnia <= 0)
+	while (salir == false) {
+
+
+		switch (opc)
 		{
-			cout << "\tSencillo, no crees?" << endl;
-		}
-		else if (vida <= 1)
-		{
-			cout << "\tPerdiste" << endl;
-		}
-		cout << "\tCodigo de trofeo: 12\nEsa fue la primer arana en este bosque maldito, vamos a buscar mas, viajero.\nNo bajes la guardia, aun quedan muchas amenazas en este bosque." << endl;
-		cout << "Vida:" << vida << endl;
-		cout << "Vamos, escribe el codigo que solto Aracnia" << endl;
-		menu();
-		cout << "Quieres continuar?\n1 = Si\n0=No" << endl;
-		cin >> opc;
-		if (opc == 1) {
+
+		case aracnia:
 			cout << "Vamos a cazarlo!" << endl;
-			cout << "Tu oponente es Aracnio" << endl;
-			vector[1]->mostrar();
-			while (vida >= 1, vidaaracnio >= 1) {
+			rival = aracnia;
+			cout << "Tu oponente es Aracnia" << endl;
+			vector[0]->mostrar();
+			while (vida >= 1, vidaaracnia >= 1) {
 				cout << "\tPelea!" << endl;
-				cout << "\tElige tu proximo movimiento \n1-Espada\n2-Proteger" << endl;
+				cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
 				cin >> opcmov;
 
 				switch (opcmov)
 				{
 				case 1:
-					cout << "\tSeleccionaste Espada" << endl;
+					cout << "\tSeleccionaste Derribo" << endl;
+					vidaaracnia -= 4;
+					break;
+				case 2:
+					cout << "\tSeleccionaste Proteger" << endl;
+					vida += 2;
+					break;
+				}
+				num = rand() % (2);
+				cout << num << " ";
+				if (num == 0)
+				{
+					cout << "\tEl enemigo ha elegido Derribo" << endl;
+					vida -= 3;
+				}
+				else
+				{
+					cout << "\tEl enemigo ha utilizado Proteger" << endl;
+					vidaaracnia += 2;
+				}
+				cout << "\tTu vida es de " << vida << endl;
+				cout << "\tLa vida de tu enemigo es de " << vidaaracnia << endl;
+			}
+			if (vidaaracnia <= 0)
+			{
+				cout << "\tSencillo, no crees?" << endl;
+			}
+			else
+			{
+				cout << "\tWow, eso no me lo esperaba, intentalo de nuevo:)" << endl;
+			}
+			cout << "Vida:" << vida << endl;
+
+			cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+			cout << "Si = 1\nNo = 0: " << endl;
+			cin >> bolsa;
+			if (bolsa == 1) {
+				menu();
+			}
+			else {
+				cout << "A donde te gustaria ir en tu proxima aventura?" << endl;
+			}
+			cout << "2- Aracnio\t3- Aracnie\t4- Eskeler\t5- Eskeletor\t6-Dracula\t7- Orchundus, el orco.";
+			cin >> opc;
+			switch (opc) {
+			case aracnio:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = aracnio;
+				cout << "Tu oponente es Aracnio" << endl;
+				vector[1]->mostrar();
+				while (vida >= 1, vidaaracnio >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaaracnio -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 3;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaaracnio += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaaracnio << endl;
+				}
+				if (vidaaracnio <= 0)
+				{
+					cout << "\tEso es todo de su parte? apenas vas comenzando!" << endl;
+				}
+				else
+				{
+					cout << "\tTrae un raid la proxima vez" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				cout << "A donde te gustaria ir en tu proxima aventura?" << endl;
+				cout << "\t3- Aracnie\t4- Eskeler\t5- Eskeletor\t6-Dracula\t7- Orchundus, el orco.";
+				cin >> opc;
+				switch (opc) {
+				case aracnie:
+					cout << "Vamos a cazarlo!" << endl;
+					rival = aracnie;
+					cout << "Tu oponente es Aracnie" << endl;
+					vector[3]->mostrar();
+					cout << "Vamos a cazarlo!" << endl;
+					rival = aracnio;
+					cout << "Tu oponente es Aracnio" << endl;
+					vector[1]->mostrar();
+					while (vida >= 1, vidaaracnie >= 1) {
+						cout << "\tPelea!" << endl;
+						cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+						cin >> opcmov;
+
+						switch (opcmov)
+						{
+						case 1:
+							cout << "\tSeleccionaste Derribo" << endl;
+							vidaaracnie -= 4;
+							break;
+						case 2:
+							cout << "\tSeleccionaste Proteger" << endl;
+							vida += 2;
+							break;
+						}
+						num = rand() % (2);
+						cout << num << " ";
+						if (num == 0)
+						{
+							cout << "\tEl enemigo ha elegido Derribo" << endl;
+							vida -= 3;
+						}
+						else
+						{
+							cout << "\tEl enemigo ha utilizado Proteger" << endl;
+							vidaaracnio += 2;
+						}
+						cout << "\tTu vida es de " << vida << endl;
+						cout << "\tLa vida de tu enemigo es de " << vidaaracnie << endl;
+					}
+					if (vidaaracnie <= 0)
+					{
+						cout << "\tAranas, odio las aranas" << endl;
+					}
+					else
+					{
+						cout << "\tNo te rindas!" << endl;
+					}
+					cout << "Vida:" << vida << endl;
+
+					cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+					cout << "Si = 1\nNo = 0: " << endl;
+					cin >> bolsa;
+					if (bolsa == 1) {
+						menu();
+					}
+					break;
+					getchar();
+
+				case eskeler:
+					cout << "Vamos a cazarlo!" << endl;
+					rival = eskeler;
+					cout << "Tu oponente es Eskeler" << endl;
+					vector[4]->mostrar();
+					cout << "Vamos a cazarlo!" << endl;
+					while (vida >= 1, vidaeskeler >= 1) {
+						cout << "\tPelea!" << endl;
+						cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+						cin >> opcmov;
+
+						switch (opcmov)
+						{
+						case 1:
+							cout << "\tSeleccionaste Derribo" << endl;
+							vidaeskeler -= 4;
+							break;
+						case 2:
+							cout << "\tSeleccionaste Proteger" << endl;
+							vida += 2;
+							break;
+						}
+						num = rand() % (2);
+						cout << num << " ";
+						if (num == 0)
+						{
+							cout << "\tEl enemigo ha elegido Derribo" << endl;
+							vida -= 4;
+						}
+						else
+						{
+							cout << "\tEl enemigo ha utilizado Proteger" << endl;
+							vidaeskeler += 2;
+						}
+						cout << "\tTu vida es de " << vida << endl;
+						cout << "\tLa vida de tu enemigo es de " << vidaeskeler << endl;
+					}
+					if (vidaeskeler <= 0)
+					{
+						cout << "\tNada mal, destruiste el cuerpo impuro de un cantante de hace siglos" << endl;
+					}
+					else
+					{
+						cout << "\tPerdiste" << endl;
+					}
+					cout << "Vida:" << vida << endl;
+
+					cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+					cout << "Si = 1\nNo = 0: " << endl;
+					cin >> bolsa;
+					if (bolsa == 1) {
+						menu();
+					}
+					break;
+					getchar();
+				case eskeletor:
+					cout << "Vamos a cazarlo!" << endl;
+					rival = eskeletor;
+					cout << "Tu oponente es Eskeletor" << endl;
+					vector[5]->mostrar();
+					while (vida >= 1, vidaeskeletor >= 1) {
+						cout << "\tPelea!" << endl;
+						cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+						cin >> opcmov;
+
+						switch (opcmov)
+						{
+						case 1:
+							cout << "\tSeleccionaste Derribo" << endl;
+							vidaeskeletor -= 4;
+							break;
+						case 2:
+							cout << "\tSeleccionaste Proteger" << endl;
+							vida += 2;
+							break;
+						}
+						num = rand() % (2);
+						cout << num << " ";
+						if (num == 0)
+						{
+							cout << "\tEl enemigo ha elegido Derribo" << endl;
+							vida -= 4;
+						}
+						else
+						{
+							cout << "\tEl enemigo ha utilizado Proteger" << endl;
+							vidaeskeletor += 2;
+						}
+						cout << "\tTu vida es de " << vida << endl;
+						cout << "\tLa vida de tu enemigo es de " << vidaeskeletor << endl;
+					}
+					if (vidaeskeletor <= 0)
+					{
+						cout << "\tQuizas a tu perro le gusten sus huesos." << endl;
+					}
+					else
+					{
+						cout << "\tPerdiste" << endl;
+					}
+					cout << "Vida:" << vida << endl;
+
+					cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+					cout << "Si = 1\nNo = 0: " << endl;
+					cin >> bolsa;
+					if (bolsa == 1) {
+						menu();
+					}
+					break;
+					getchar();
+				case dracula:
+					cout << "Vamos a cazarlo!" << endl;
+					rival = dracula;
+					cout << "Tu oponente es Dracula" << endl;
+					vector[6]->mostrar();
+					while (vida >= 1, vidadracula >= 1) {
+						cout << "\tPelea!" << endl;
+						cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+						cin >> opcmov;
+
+						switch (opcmov)
+						{
+						case 1:
+							cout << "\tSeleccionaste Derribo" << endl;
+							vidadracula -= 4;
+							break;
+						case 2:
+							cout << "\tSeleccionaste Proteger" << endl;
+							vida += 2;
+							break;
+						}
+						num = rand() % (2);
+						cout << num << " ";
+						if (num == 0)
+						{
+							cout << "\tEl enemigo ha elegido Derribo" << endl;
+							vida -= 6;
+						}
+						else
+						{
+							cout << "\tEl enemigo ha utilizado Proteger" << endl;
+							vidadracula += 2;
+						}
+						cout << "\tTu vida es de " << vida << endl;
+						cout << "\tLa vida de tu enemigo es de " << vidadracula << endl;
+					}
+					if (vidadracula <= 0)
+					{
+						cout << "\tDracula alguna vez fue un hombre muy importante para su pueblo, que mal que la sangre lo haya hecho perder el camino socialmente aceptable" << endl;
+					}
+					else
+					{
+						cout << "\tPerdiste" << endl;
+					}
+					cout << "Vida:" << vida << endl;
+
+					cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+					cout << "Si = 1\nNo = 0: " << endl;
+					cin >> bolsa;
+					if (bolsa == 1) {
+						menu();
+					}
+					break;
+					getchar();
+				case orco:
+					cout << "Vamos a cazarlo!" << endl;
+					rival = orco;
+					cout << "Tu oponente es Orchundus, el orco." << endl;
+					vector[7]->mostrar();
+					while (vida >= 1, vidaorco >= 1) {
+						cout << "\tPelea!" << endl;
+						cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+						cin >> opcmov;
+
+						switch (opcmov)
+						{
+						case 1:
+							cout << "\tSeleccionaste Derribo" << endl;
+							vidaorco -= 4;
+							break;
+						case 2:
+							cout << "\tSeleccionaste Proteger" << endl;
+							vida += 2;
+							break;
+						}
+						num = rand() % (2);
+						cout << num << " ";
+						if (num == 0)
+						{
+							cout << "\tEl enemigo ha elegido Derribo" << endl;
+							vida -= 7;
+						}
+						else
+						{
+							cout << "\tEl enemigo ha utilizado Proteger" << endl;
+							vidaorco += 2;
+						}
+						cout << "\tTu vida es de " << vida << endl;
+						cout << "\tLa vida de tu enemigo es de " << vidaorco << endl;
+					}
+					if (vidaorco <= 0)
+					{
+						cout << "\tEste orco antes tenia una familia a la cual no pudo proteger de monstruos como tu. Ahora descansa en paz junto a ellos" << endl;
+					}
+					else
+					{
+						cout << "\tPerdiste" << endl;
+					}
+					cout << "Vida:" << vida << endl;
+
+					cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+					cout << "Si = 1\nNo = 0: " << endl;
+					cin >> bolsa;
+					if (bolsa == 1) {
+						menu();
+					}
+					break;
+					getchar();
+				}
+				break;
+				getchar();
+
+			case aracnio:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = aracnio;
+				cout << "Tu oponente es Aracnio" << endl;
+				vector[1]->mostrar();
+				while (vida >= 1, vidaaracnio >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaaracnio -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 3;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaaracnio += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaaracnio << endl;
+				}
+				if (vidaaracnio <= 0)
+				{
+					cout << "\tEso es todo de su parte? apenas vas comenzando!" << endl;
+				}
+				else
+				{
+					cout << "\tTrae un raid la proxima vez" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			case aracnie:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = aracnie;
+				cout << "Tu oponente es Aracnie" << endl;
+				vector[3]->mostrar();
+				cout << "Vamos a cazarlo!" << endl;
+				rival = aracnio;
+				cout << "Tu oponente es Aracnio" << endl;
+				vector[1]->mostrar();
+				while (vida >= 1, vidaaracnie >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaaracnie -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 3;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaaracnio += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaaracnie << endl;
+				}
+				if (vidaaracnie <= 0)
+				{
+					cout << "\tAranas, odio las aranas" << endl;
+				}
+				else
+				{
+					cout << "\tNo te rindas!" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+
+			case eskeler:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = eskeler;
+				cout << "Tu oponente es Eskeler" << endl;
+				vector[4]->mostrar();
+				cout << "Vamos a cazarlo!" << endl;
+				while (vida >= 1, vidaeskeler >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaeskeler -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 4;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaeskeler += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaeskeler << endl;
+				}
+				if (vidaeskeler <= 0)
+				{
+					cout << "\tNada mal, destruiste el cuerpo impuro de un cantante de hace siglos" << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			case eskeletor:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = eskeletor;
+				cout << "Tu oponente es Eskeletor" << endl;
+				vector[5]->mostrar();
+				while (vida >= 1, vidaeskeletor >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaeskeletor -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 4;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaeskeletor += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaeskeletor << endl;
+				}
+				if (vidaeskeletor <= 0)
+				{
+					cout << "\tQuizas a tu perro le gusten sus huesos." << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			case dracula:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = dracula;
+				cout << "Tu oponente es Dracula" << endl;
+				vector[6]->mostrar();
+				while (vida >= 1, vidadracula >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidadracula -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 6;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidadracula += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidadracula << endl;
+				}
+				if (vidadracula <= 0)
+				{
+					cout << "\tDracula alguna vez fue un hombre muy importante para su pueblo, que mal que la sangre lo haya hecho perder el camino socialmente aceptable" << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			case orco:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = orco;
+				cout << "Tu oponente es Orchundus, el orco." << endl;
+				vector[7]->mostrar();
+				while (vida >= 1, vidaorco >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaorco -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 7;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaorco += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaorco << endl;
+				}
+				if (vidaorco <= 0)
+				{
+					cout << "\tEste orco antes tenia una familia a la cual no pudo proteger de monstruos como tu. Ahora descansa en paz junto a ellos" << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+
+				}
+				break;
+				getchar();
+			case aracnie:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = aracnie;
+				cout << "Tu oponente es Aracnie" << endl;
+				vector[3]->mostrar();
+				cout << "Vamos a cazarlo!" << endl;
+				rival = aracnio;
+				cout << "Tu oponente es Aracnio" << endl;
+				vector[1]->mostrar();
+				while (vida >= 1, vidaaracnie >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaaracnie -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 3;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaaracnio += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaaracnie << endl;
+				}
+				if (vidaaracnie <= 0)
+				{
+					cout << "\tAranas, odio las aranas" << endl;
+				}
+				else
+				{
+					cout << "\tNo te rindas!" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+
+			case eskeler:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = eskeler;
+				cout << "Tu oponente es Eskeler" << endl;
+				vector[4]->mostrar();
+				cout << "Vamos a cazarlo!" << endl;
+				while (vida >= 1, vidaeskeler >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaeskeler -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 4;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaeskeler += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaeskeler << endl;
+				}
+				if (vidaeskeler <= 0)
+				{
+					cout << "\tNada mal, destruiste el cuerpo impuro de un cantante de hace siglos" << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			case eskeletor:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = eskeletor;
+				cout << "Tu oponente es Eskeletor" << endl;
+				vector[5]->mostrar();
+				while (vida >= 1, vidaeskeletor >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaeskeletor -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 4;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaeskeletor += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaeskeletor << endl;
+				}
+				if (vidaeskeletor <= 0)
+				{
+					cout << "\tQuizas a tu perro le gusten sus huesos." << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			case dracula:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = dracula;
+				cout << "Tu oponente es Dracula" << endl;
+				vector[6]->mostrar();
+				while (vida >= 1, vidadracula >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidadracula -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 6;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidadracula += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidadracula << endl;
+				}
+				if (vidadracula <= 0)
+				{
+					cout << "\tDracula alguna vez fue un hombre muy importante para su pueblo, que mal que la sangre lo haya hecho perder el camino socialmente aceptable" << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			case orco:
+				cout << "Vamos a cazarlo!" << endl;
+				rival = orco;
+				cout << "Tu oponente es Orchundus, el orco." << endl;
+				vector[7]->mostrar();
+				while (vida >= 1, vidaorco >= 1) {
+					cout << "\tPelea!" << endl;
+					cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+					cin >> opcmov;
+
+					switch (opcmov)
+					{
+					case 1:
+						cout << "\tSeleccionaste Derribo" << endl;
+						vidaorco -= 4;
+						break;
+					case 2:
+						cout << "\tSeleccionaste Proteger" << endl;
+						vida += 2;
+						break;
+					}
+					num = rand() % (2);
+					cout << num << " ";
+					if (num == 0)
+					{
+						cout << "\tEl enemigo ha elegido Derribo" << endl;
+						vida -= 7;
+					}
+					else
+					{
+						cout << "\tEl enemigo ha utilizado Proteger" << endl;
+						vidaorco += 2;
+					}
+					cout << "\tTu vida es de " << vida << endl;
+					cout << "\tLa vida de tu enemigo es de " << vidaorco << endl;
+				}
+				if (vidaorco <= 0)
+				{
+					cout << "\tEste orco antes tenia una familia a la cual no pudo proteger de monstruos como tu. Ahora descansa en paz junto a ellos" << endl;
+				}
+				else
+				{
+					cout << "\tPerdiste" << endl;
+				}
+				cout << "Vida:" << vida << endl;
+
+				cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+				cout << "Si = 1\nNo = 0: " << endl;
+				cin >> bolsa;
+				if (bolsa == 1) {
+					menu();
+				}
+				break;
+				getchar();
+			}
+			break;
+			getchar();
+
+		case aracnio:
+			cout << "Vamos a cazarlo!" << endl;
+			rival = aracnio;
+			cout << "Tu oponente es Aracnio" << endl;
+			vector[1]->mostrar();
+			while (vida >= 1, vidaaracnio >= 1) {
+				cout << "\tPelea!" << endl;
+				cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+				cin >> opcmov;
+
+				switch (opcmov)
+				{
+				case 1:
+					cout << "\tSeleccionaste Derribo" << endl;
 					vidaaracnio -= 4;
 					break;
 				case 2:
@@ -204,7 +1172,7 @@ int main()
 				cout << num << " ";
 				if (num == 0)
 				{
-					cout << "\tEl enemigo ha elegido Mordida" << endl;
+					cout << "\tEl enemigo ha elegido Derribo" << endl;
 					vida -= 3;
 				}
 				else
@@ -217,283 +1185,303 @@ int main()
 			}
 			if (vidaaracnio <= 0)
 			{
-				cout << "\tSencillo, no crees?" << endl;
+				cout << "\tEso es todo de su parte? apenas vas comenzando!" << endl;
 			}
-			else if (vida <= 1)
+			else
 			{
-				cout << "\tWow, eso no me lo esperaba, intentalo de nuevo:)" << endl;
+				cout << "\tTrae un raid la proxima vez" << endl;
 			}
-			cout << "Codigo: 23\nLa desesperacion de tus enemigos se hace mas grande, ya has eliminado a 2 de sus monstruos mas poderosos en el bosque.";
 			cout << "Vida:" << vida << endl;
-			cout << "Vamos, escribe el codigo que solto Aracnio" << endl;
-			menu();
-			cout << "Quieres continuar?\n1 = Si\n0=No" << endl;
-			cin >> opc;
-			if (opc == 1) {
-				cout << "Acabemos con esto." << endl;
-				cout << "Tu oponente es Aracnie" << endl;
-				vector[2]->mostrar();
-				while (vida >= 1, vidaaracnie >= 1) {
-					cout << "\tPelea!" << endl;
-					cout << "\tElige tu proximo movimiento \n1-Espada\n2-Proteger" << endl;
-					cin >> opcmov;
 
-					switch (opcmov)
-					{
-					case 1:
-						cout << "\tSeleccionaste Espada" << endl;
-						vidaaracnie -= 4;
-						break;
-					case 2:
-						cout << "\tSeleccionaste Proteger" << endl;
-						vida += 2;
-						break;
-					}
-					num = rand() % (2);
-					cout << num << " ";
-					if (num == 0)
-					{
-						cout << "\tEl enemigo ha elegido Mordida" << endl;
-						vida -= 3;
-					}
-					else
-					{
-						cout << "\tEl enemigo ha utilizado Proteger" << endl;
-						vidaaracnie += 2;
-					}
-					cout << "\tTu vida es de " << vida << endl;
-					cout << "\tLa vida de tu enemigo es de " << vidaaracnie << endl;
-				}
-				if (vidaaracnie <= 0)
-				{
-					cout << "\tSencillo, no crees?" << endl;
-				}
-				else if (vida <= 1)
-				{
-					cout << "\tWow, eso no me lo esperaba, intentalo de nuevo:)" << endl;
-				}
-				cout << "Vida:" << vida << endl;
-				cout << "Codigo: 45" << endl;
-				cout << "Has subido tus estadisticas viajero!\nAhora tu vida es de: " << vida + 5 <<" puntos"<< endl;
-				cout << "Y tu ataque subio a: 6 puntos!" << endl;
-				cout << "Ahora que ya estas familiarizado con el sistema de combate y tienes mejores stats para defenderte, dirijamonos al castillo embrujado donde se encuentra Orchundus, el orco." << endl;
-				cout << "Seran enfrentamientos muy voraces, pero valdran la pena, " << name << endl;
-				cout << "Vamos, escribe el codigo que solto Aracnie" << endl;
+			cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+			cout << "Si = 1\nNo = 0: " << endl;
+			cin >> bolsa;
+			if (bolsa == 1) {
 				menu();
-				cout << "Quieres continuar?\n1 = Si\n0=No" << endl;
-				cin >> opc;
-				if (opc == 1) {
-					cout << "Tu oponente es Eskeler" << endl;
-					vector[3]->mostrar();
-					while (vida >= 1, vidaeskeler >= 1) {
-						cout << "\tPelea!" << endl;
-						cout << "\tElige tu proximo movimiento \n1-Espada\n2-Proteger" << endl;
-						cin >> opcmov;
-
-						switch (opcmov)
-						{
-						case 1:
-							cout << "\tSeleccionaste Espada" << endl;
-							vidaeskeler -= 6;
-							break;
-						case 2:
-							cout << "\tSeleccionaste Proteger" << endl;
-							vida += 3;
-							break;
-						}
-						num = rand() % (2);
-						cout << num << " ";
-						if (num == 0)
-						{
-							cout << "\tEl enemigo ha elegido Mordida" << endl;
-							vida -= 4;
-						}
-						else
-						{
-							cout << "\tEl enemigo ha utilizado Proteger" << endl;
-							vidaeskeler += 3;
-						}
-						cout << "\tTu vida es de " << vida << endl;
-						cout << "\tLa vida de tu enemigo es de " << vidaeskeler << endl;
-					}
-					if (vidaeskeler <= 0)
-					{
-						cout << "\tSencillo, no crees?" << endl;
-					}
-					else if (vida <= 1)
-					{
-						cout << "\tWow, eso no me lo esperaba, intentalo de nuevo:)" << endl;
-					}
-					cout << "Vida:" << vida << endl;
-					cout << "Codigo: 56" << endl;
-					cout << "Estuviste estupendo contra ese saco de huesos, " << name << "vamos por el siguiente." << endl;
-					cout << "Vamos, escribe el codigo que solto Eskeler" << endl;
-					menu();
-					cout << "Quieres continuar?\n1 = Si\n0=No" << endl;
-					cin >> opc;
-					if (opc == 1) {
-						cout << "Vamos a cazarlo!" << endl;
-						cout << "Tu oponente es Eskeletor" << endl;
-						vector[4]->mostrar();
-						while (vida >= 1, vidaeskeletor >= 1) {
-							cout << "\tPelea!" << endl;
-							cout << "\tElige tu proximo movimiento \n1-Espada\n2-Proteger" << endl;
-							cin >> opcmov;
-							switch (opcmov)
-							{
-							case 1:
-								cout << "\tSeleccionaste Espada" << endl;
-								vidaeskeletor -= 6;
-								break;
-							case 2:
-								cout << "\tSeleccionaste Proteger" << endl;
-								vida += 3;
-								break;
-							}
-							num = rand() % (2);
-							cout << num << " ";
-							if (num == 0)
-							{
-								cout << "\tEl enemigo ha elegido Mordida" << endl;
-								vida -= 4;
-							}
-							else
-							{
-								cout << "\tEl enemigo ha utilizado Proteger" << endl;
-								vidaeskeletor += 3;
-							}
-							cout << "\tTu vida es de " << vida << endl;
-							cout << "\tLa vida de tu enemigo es de " << vidaeskeletor << endl;
-						}
-						if (vidaeskeletor <= 0)
-						{
-							cout << "\tSencillo, no crees?" << endl;
-						}
-						else if (vida <= 1)
-						{
-							cout << "\tWow, eso no me lo esperaba, intentalo de nuevo:)" << endl;
-						}
-						cout << "Vida:" << vida << endl;
-						cout << "La siguiente puerta se ve bastante antigua, no se si deberiamos abrirla..." << endl;
-						cout << "Codigo: 85" << endl;
-						cout << "Vamos, escribe el codigo que solto Eskeletor" << endl;
-						menu();
-						cout << "Quieres continuar?\n1 = Si\n0=No" << endl;
-						cin >> opc;
-						if (opc) {
-							cout << "Oh no, es el rey de las tinieblas..." << endl;
-							cout << "Deberias tener cuidado, dale con la espada y reza por no morir..." << endl;
-							cout << "Tu oponente es Aracnia" << endl;
-							vector[5]->mostrar();
-							while (vida >= 1, vidadracula >= 1) {
-								cout << "\tPelea!" << endl;
-								cout << "\tElige tu proximo movimiento \n1-Espada\n2-Proteger" << endl;
-								cin >> opcmov;
-
-								switch (opcmov)
-								{
-								case 1:
-									cout << "\tSeleccionaste Espada" << endl;
-									vidadracula -= 6;
-									break;
-								case 2:
-									cout << "\tSeleccionaste Proteger" << endl;
-									vida += 6;
-									break;
-								}
-								num = rand() % (2);
-								cout << num << " ";
-								if (num == 0)
-								{
-									cout << "\tEl enemigo ha elegido Mordida" << endl;
-									vida -= 7;
-								}
-								else
-								{
-									cout << "\tEl enemigo ha utilizado Proteger" << endl;
-									vidadracula += 3;
-								}
-								cout << "\tTu vida es de " << vida << endl;
-								cout << "\tLa vida de tu enemigo es de " << vidadracula << endl;
-							}
-							if (vidadracula <= 0)
-							{
-								cout << "\tSencillo, no crees?" << endl;
-							}
-							else if (vida <= 1)
-							{
-								cout << "\tWow, eso no me lo esperaba, intentalo de nuevo:)" << endl;
-							}
-							cout << "Vida:" << vida << endl;
-							cout << "Codigo: 50\nDracula solia ser un humano como nosotros, pero un pacto con una entidad desconocida lo hizo comenzar a matar" << endl;
-							cout << "Descansa en paz, Dracula." << endl;
-							cout << "Has subido tus estadisticas viajero!\nAhora tu vida es de: " << vida + 5 << " puntos" << endl;
-							cout << "Y tu ataque subio a: 8 puntos!\nHas desbloqueado el ataque\n--Bola de fuego--\nDano: 10" << endl;
-							cout << "Vamos, escribe el codigo que solto Dracula" << endl;
-							menu();
-							cout << "Quieres continuar?\n1 = Si\n0=No" << endl;
-							cin >> opc;
-							if (opc) {
-								cout << "Recoge tus cosas y armate de valor, nos queda el ultimo jefe." << endl;
-								cout << "Tu oponente es Orchundus, el Orco." << endl;
-								vector[6]->mostrar();
-								while (vida >= 1, vidaorco >= 1) {
-									cout << "\tPelea!" << endl;
-									cout << "\tElige tu proximo movimiento \n1-Espada\n2-Proteger\n3-Bola de fuego" << endl;
-									cin >> opcmov;
-
-									switch (opcmov)
-									{
-									case 1:
-										cout << "\tSeleccionaste Espada" << endl;
-										vidaorco -= 8;
-										break;
-									case 2:
-										cout << "\tSeleccionaste Proteger" << endl;
-										vida += 8;
-										break;
-									case 3:
-										cout << "\tSeleccionaste Bola de fuego" << endl;
-										vidaorco -= 10;
-										break;
-									}
-									num = rand() % (2);
-									cout << num << " ";
-									if (num == 0)
-									{
-										cout << "\tEl enemigo ha elegido Mordida" << endl;
-										vida -= 7;
-									}
-									else
-									{
-										cout << "\tEl enemigo ha utilizado Proteger" << endl;
-										vidaorco += 4;
-									}
-									cout << "\tTu vida es de " << vida << endl;
-									cout << "\tLa vida de tu enemigo es de " << vidaorco << endl;
-								}
-								if (vidaorco <= 0)
-								{
-									cout << "\tMira, que hay detras de su cadaver" << endl;
-								}
-								else if (vida <= 1)
-								{
-									cout << "\tPerdiste" << endl;
-								}
-								cout << "Al parecer, este orco defendia el castillo por lo que aqui albergaba\nSon.. son los restos de su familia." << endl;
-								cout << "Vida:" << vida << endl;
-								cout << "Vamos, escribe el codigo que solto Orchundus.\nCodigo: 100" << endl;
-								menu();
-							}
-						}
-					}
-				}
 			}
+			break;
+			getchar();
+		case aracnie:
+			cout << "Vamos a cazarlo!" << endl;
+			rival = aracnie;
+			cout << "Tu oponente es Aracnie" << endl;
+			vector[3]->mostrar();
+			cout << "Vamos a cazarlo!" << endl;
+			rival = aracnio;
+			cout << "Tu oponente es Aracnio" << endl;
+			vector[1]->mostrar();
+			while (vida >= 1, vidaaracnie >= 1) {
+				cout << "\tPelea!" << endl;
+				cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+				cin >> opcmov;
+
+				switch (opcmov)
+				{
+				case 1:
+					cout << "\tSeleccionaste Derribo" << endl;
+					vidaaracnie -= 4;
+					break;
+				case 2:
+					cout << "\tSeleccionaste Proteger" << endl;
+					vida += 2;
+					break;
+				}
+				num = rand() % (2);
+				cout << num << " ";
+				if (num == 0)
+				{
+					cout << "\tEl enemigo ha elegido Derribo" << endl;
+					vida -= 3;
+				}
+				else
+				{
+					cout << "\tEl enemigo ha utilizado Proteger" << endl;
+					vidaaracnio += 2;
+				}
+				cout << "\tTu vida es de " << vida << endl;
+				cout << "\tLa vida de tu enemigo es de " << vidaaracnie << endl;
+			}
+			if (vidaaracnie <= 0)
+			{
+				cout << "\tAranas, odio las aranas" << endl;
+			}
+			else
+			{
+				cout << "\tNo te rindas!" << endl;
+			}
+			cout << "Vida:" << vida << endl;
+
+			cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+			cout << "Si = 1\nNo = 0: " << endl;
+			cin >> bolsa;
+			if (bolsa == 1) {
+				menu();
+			}
+			break;
+			getchar();
+
+		case eskeler:
+			cout << "Vamos a cazarlo!" << endl;
+			rival = eskeler;
+			cout << "Tu oponente es Eskeler" << endl;
+			vector[4]->mostrar();
+			cout << "Vamos a cazarlo!" << endl;
+			while (vida >= 1, vidaeskeler >= 1) {
+				cout << "\tPelea!" << endl;
+				cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+				cin >> opcmov;
+
+				switch (opcmov)
+				{
+				case 1:
+					cout << "\tSeleccionaste Derribo" << endl;
+					vidaeskeler -= 4;
+					break;
+				case 2:
+					cout << "\tSeleccionaste Proteger" << endl;
+					vida += 2;
+					break;
+				}
+				num = rand() % (2);
+				cout << num << " ";
+				if (num == 0)
+				{
+					cout << "\tEl enemigo ha elegido Derribo" << endl;
+					vida -= 4;
+				}
+				else
+				{
+					cout << "\tEl enemigo ha utilizado Proteger" << endl;
+					vidaeskeler += 2;
+				}
+				cout << "\tTu vida es de " << vida << endl;
+				cout << "\tLa vida de tu enemigo es de " << vidaeskeler << endl;
+			}
+			if (vidaeskeler <= 0)
+			{
+				cout << "\tNada mal, destruiste el cuerpo impuro de un cantante de hace siglos" << endl;
+			}
+			else
+			{
+				cout << "\tPerdiste" << endl;
+			}
+			cout << "Vida:" << vida << endl;
+
+			cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+			cout << "Si = 1\nNo = 0: " << endl;
+			cin >> bolsa;
+			if (bolsa == 1) {
+				menu();
+			}
+			break;
+			getchar();
+		case eskeletor:
+			cout << "Vamos a cazarlo!" << endl;
+			rival = eskeletor;
+			cout << "Tu oponente es Eskeletor" << endl;
+			vector[5]->mostrar();
+			while (vida >= 1, vidaeskeletor >= 1) {
+				cout << "\tPelea!" << endl;
+				cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+				cin >> opcmov;
+
+				switch (opcmov)
+				{
+				case 1:
+					cout << "\tSeleccionaste Derribo" << endl;
+					vidaeskeletor -= 4;
+					break;
+				case 2:
+					cout << "\tSeleccionaste Proteger" << endl;
+					vida += 2;
+					break;
+				}
+				num = rand() % (2);
+				cout << num << " ";
+				if (num == 0)
+				{
+					cout << "\tEl enemigo ha elegido Derribo" << endl;
+					vida -= 4;
+				}
+				else
+				{
+					cout << "\tEl enemigo ha utilizado Proteger" << endl;
+					vidaeskeletor += 2;
+				}
+				cout << "\tTu vida es de " << vida << endl;
+				cout << "\tLa vida de tu enemigo es de " << vidaeskeletor << endl;
+			}
+			if (vidaeskeletor <= 0)
+			{
+				cout << "\tQuizas a tu perro le gusten sus huesos." << endl;
+			}
+			else
+			{
+				cout << "\tPerdiste" << endl;
+			}
+			cout << "Vida:" << vida << endl;
+
+			cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+			cout << "Si = 1\nNo = 0: " << endl;
+			cin >> bolsa;
+			if (bolsa == 1) {
+				menu();
+			}
+			break;
+			getchar();
+		case dracula:
+			cout << "Vamos a cazarlo!" << endl;
+			rival = dracula;
+			cout << "Tu oponente es Dracula" << endl;
+			vector[6]->mostrar();
+			while (vida >= 1, vidadracula >= 1) {
+				cout << "\tPelea!" << endl;
+				cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+				cin >> opcmov;
+
+				switch (opcmov)
+				{
+				case 1:
+					cout << "\tSeleccionaste Derribo" << endl;
+					vidadracula -= 4;
+					break;
+				case 2:
+					cout << "\tSeleccionaste Proteger" << endl;
+					vida += 2;
+					break;
+				}
+				num = rand() % (2);
+				cout << num << " ";
+				if (num == 0)
+				{
+					cout << "\tEl enemigo ha elegido Derribo" << endl;
+					vida -= 6;
+				}
+				else
+				{
+					cout << "\tEl enemigo ha utilizado Proteger" << endl;
+					vidadracula += 2;
+				}
+				cout << "\tTu vida es de " << vida << endl;
+				cout << "\tLa vida de tu enemigo es de " << vidadracula << endl;
+			}
+			if (vidadracula <= 0)
+			{
+				cout << "\tDracula alguna vez fue un hombre muy importante para su pueblo, que mal que la sangre lo haya hecho perder el camino socialmente aceptable" << endl;
+			}
+			else
+			{
+				cout << "\tPerdiste" << endl;
+			}
+			cout << "Vida:" << vida << endl;
+
+			cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+			cout << "Si = 1\nNo = 0: " << endl;
+			cin >> bolsa;
+			if (bolsa == 1) {
+				menu();
+			}
+			break;
+			getchar();
+		case orco:
+			cout << "Vamos a cazarlo!" << endl;
+			rival = orco;
+			cout << "Tu oponente es Orchundus, el orco." << endl;
+			vector[7]->mostrar();
+			while (vida >= 1, vidaorco >= 1) {
+				cout << "\tPelea!" << endl;
+				cout << "\tElige tu proximo movimiento \n1-Derribo \n2-Proteger" << endl;
+				cin >> opcmov;
+
+				switch (opcmov)
+				{
+				case 1:
+					cout << "\tSeleccionaste Derribo" << endl;
+					vidaorco -= 4;
+					break;
+				case 2:
+					cout << "\tSeleccionaste Proteger" << endl;
+					vida += 2;
+					break;
+				}
+				num = rand() % (2);
+				cout << num << " ";
+				if (num == 0)
+				{
+					cout << "\tEl enemigo ha elegido Derribo" << endl;
+					vida -= 7;
+				}
+				else
+				{
+					cout << "\tEl enemigo ha utilizado Proteger" << endl;
+					vidaorco += 2;
+				}
+				cout << "\tTu vida es de " << vida << endl;
+				cout << "\tLa vida de tu enemigo es de " << vidaorco << endl;
+			}
+			if (vidaorco <= 0)
+			{
+				cout << "\tEste orco antes tenia una familia a la cual no pudo proteger de monstruos como tu. Ahora descansa en paz junto a ellos" << endl;
+			}
+			else
+			{
+				cout << "\tPerdiste" << endl;
+			}
+			cout << "Vida:" << vida << endl;
+
+			cout << "Deseas usar/ingresar objetos a tu bolsa?" << endl;
+			cout << "Si = 1\nNo = 0: " << endl;
+			cin >> bolsa;
+			if (bolsa == 1) {
+				menu();
+			}
+			break;
+			getchar();
+
+			cout << "Deseas jugar otra vez?" << endl;
+			cout << "Responde 0 para si y 1 para no" << endl;
+			cin >> salir;
 		}
-		cout << "Gracias " << name << " eso fue mas oscuro de lo que pense, no crei que los enemigos se comportaran como nosotros..." << endl;
-		cout << "Deseas jugar otra vez?" << endl;
-		cout << "Responde 1 para si y 0 para no" << endl;
-		cin >> salir;			
 	}
 }
 
